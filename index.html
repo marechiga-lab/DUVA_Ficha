@@ -41,6 +41,15 @@
             background-color: var(--color-secondary); 
             z-index: 10;
         }
+        /* Nuevo estilo para las tarjetas de convenios en gris */
+        .timeline-card-muted {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            color: #1f2937; /* text-gray-800 */
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+        }
     </style>
     <script>
         tailwind.config = {
@@ -66,10 +75,10 @@
         <h1 class="text-3xl sm:text-4xl font-extrabold text-primary mb-2">Dictamen Informativo: Desarrollo DUVA</h1>
         <h2 class="text-xl sm:text-2xl font-semibold text-gray-800">Estructura Legal y Financiera</h2>
         
-        <!-- Bloque de resumen -->
-        <div class="mt-6 p-4 bg-white border-l-4 border-primary rounded-lg text-left shadow-inner">
+        <!-- Bloque de resumen - AHORA CON FONDO AMARILLO (bg-light-bg) y texto ajustado -->
+        <div class="mt-6 p-4 bg-light-bg border-l-4 border-primary rounded-lg text-left shadow-inner">
             <h3 class="font-bold text-lg text-primary mb-2">Resumen Ejecutivo</h3>
-            <p class="text-gray-700 text-sm">
+            <p class="text-primary text-sm">
                 La estructura jurídica (Fideicomiso 19898) es sólida y ha sido adaptada mediante cuatro convenios. El proyecto se financia con un crédito puente de $118 M MXN (BANCREA), garantizado por el patrimonio. Puntos críticos: <strong>rezago en escrituración</strong> (solo 12 de 62 unidades) y <strong>riesgo contractual</strong> por penalizaciones debido a posibles rescisiones por retraso en la entrega. La contraprestación del aportante está casi liquidada ($20,000.00 de saldo).
             </p>
         </div>
@@ -99,34 +108,47 @@
                 <!-- Línea de tiempo vertical -->
                 <div class="absolute left-0 top-0 h-full w-0.5 bg-custom-border"></div>
 
-                <!-- Items de la línea de tiempo (se mantienen sin hover para no sobrecargar) -->
+                <!-- Items de la línea de tiempo -->
+                
+                <!-- Constitución (no es convenio, mantiene estilo original) -->
                 <div class="timeline-item relative pl-4 pb-4">
                     <p class="font-semibold text-sm text-gray-600">24/Nov/2017</p>
                     <p class="font-bold text-primary">Constitución</p>
                     <p class="text-sm text-gray-700">Fijación de Contraprestación Inicial (8.29% para Aportantes A).</p>
                 </div>
+
+                <!-- 1er Convenio (Ahora en gris) -->
                 <div class="timeline-item relative pl-4 pb-4">
-                    <p class="font-semibold text-sm text-gray-600">12/Mar/2019</p>
-                    <p class="font-bold text-primary">1er Convenio</p>
-                    <p class="text-sm text-gray-700">Ajuste de Contraprestación al 5.66% y modificación de condiciones para hipotecas.</p>
+                    <div class="timeline-card-muted">
+                        <p class="font-semibold text-sm text-gray-600">12/Mar/2019</p>
+                        <p class="font-bold text-gray-800">1er Convenio</p>
+                        <p class="text-sm text-gray-700">Ajuste de Contraprestación al 5.66% y modificación de condiciones para hipotecas.</p>
+                    </div>
                 </div>
+
+                <!-- 2do Convenio (Ahora en gris) -->
                 <div class="timeline-item relative pl-4 pb-4">
-                    <p class="font-semibold text-sm text-gray-600">21/Oct/2020</p>
-                    <p class="font-bold text-primary">2do Convenio</p>
-                    <p class="text-sm text-gray-700">Sustitución de la empresa constructora (Fideicomitente B).</p>
+                    <div class="timeline-card-muted">
+                        <p class="font-semibold text-sm text-gray-600">21/Oct/2020</p>
+                        <p class="font-bold text-gray-800">2do Convenio</p>
+                        <p class="text-sm text-gray-700">Sustitución de la empresa constructora (Fideicomitente B).</p>
+                    </div>
                 </div>
                 
-                <!-- Item Clave (Acento) -->
+                <!-- Item Clave (3er Convenio - Mantiene el acento amarillo/secundario) -->
                 <div class="timeline-item relative pl-4 pb-4 bg-secondary/10 rounded-lg -mx-2 px-2 border border-secondary">
                     <p class="font-semibold text-sm text-gray-700">19/Mar/2021</p>
                     <p class="font-bold text-primary">3er Convenio (Clave)</p>
                     <p class="text-sm text-gray-700">Permitió garantizar el crédito puente con la totalidad del inmueble, no solo unidades futuras.</p>
                 </div>
 
+                <!-- 4to Convenio (Ahora en gris) -->
                 <div class="timeline-item relative pl-4 pb-4">
-                    <p class="font-semibold text-sm text-gray-600">03/Oct/2022</p>
-                    <p class="font-bold text-primary">4to Convenio</p>
-                    <p class="text-sm text-gray-700">Fijación de contraprestación total para Fideicomitente A (Graciela Tovar), dejando un <strong>saldo de $20,000.00</strong>.</p>
+                    <div class="timeline-card-muted">
+                        <p class="font-semibold text-sm text-gray-600">03/Oct/2022</p>
+                        <p class="font-bold text-gray-800">4to Convenio</p>
+                        <p class="text-sm text-gray-700">Fijación de contraprestación total para Fideicomitente A (Graciela Tovar), dejando un <strong>saldo de $20,000.00</strong>.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -203,6 +225,54 @@
         </div>
 
     </main>
+
+    <!-- Nueva Sección de Conclusiones -->
+    <section class="mt-12 p-6 bg-card-bg shadow-xl rounded-xl">
+        <h3 class="section-title text-2xl font-bold text-gray-800 mb-6 pl-4">Conclusiones Clave del Dictamen</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Conclusión 1: Estructura Legal -->
+            <div class="p-4 rounded-lg bg-primary/90 text-white border-b-4 border-secondary hover:shadow-lg transition-shadow">
+                <p class="font-bold text-lg mb-1 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-secondary mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v7.5a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    Estructura Legal Sólida
+                </p>
+                <p class="text-sm text-gray-300">
+                    El Fideicomiso 19898 provee un marco jurídico robusto. El 3er Convenio asegura la garantía hipotecaria del crédito puente sobre el 100% del patrimonio.
+                </p>
+            </div>
+
+            <!-- Conclusión 2: Riesgo de Formalización -->
+            <div class="p-4 rounded-lg bg-primary/90 text-white border-b-4 border-danger hover:shadow-lg transition-shadow">
+                <p class="font-bold text-lg mb-1 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-danger mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.305 3.24 1.903 3.24h14.714c1.6 0 2.767-1.74 1.904-3.243l-7.385-12.875a1.86 1.86 0 0 0-3.203 0l-7.385 12.875Z" />
+                    </svg>
+                    Riesgo Principal: Escrituración
+                </p>
+                <p class="text-sm text-gray-300">
+                    El principal riesgo operativo es el bajo porcentaje de unidades formalmente escrituradas (solo 12/62), lo que puede generar incertidumbre en los compradores.
+                </p>
+            </div>
+
+            <!-- Conclusión 3: Exposición a Costos (Ícono cambiado) -->
+            <div class="p-4 rounded-lg bg-primary/90 text-white border-b-4 border-secondary hover:shadow-lg transition-shadow">
+                <p class="font-bold text-lg mb-1 flex items-center">
+                    <!-- Nuevo ícono de Advertencia/Riesgo -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-secondary mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                    </svg>
+                    Exposición a Costos
+                </p>
+                <p class="text-sm text-gray-300">
+                    La desarrolladora está expuesta a penalizaciones (hasta el 20% del valor) si el retraso en la entrega causa rescisiones contractuales.
+                </p>
+            </div>
+        </div>
+    </section>
     
     <!-- Pie de página de la infografía -->
     <footer class="mt-12 pt-6 text-center border-t border-custom-border">
